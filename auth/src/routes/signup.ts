@@ -10,7 +10,7 @@ import { User } from '../models/user';
 const router = express.Router();
 
 router.post(
-    '/api/user/signup',
+    '/api/users/signup',
     [
         body('email').isEmail().withMessage('Email must be valid'),
         body('password')
@@ -22,9 +22,9 @@ router.post(
     async (req: Request, res: Response) => {
         const { email, password } = req.body;
 
-        const exisatingUser = await User.findOne({ email });
+        const existingUser = await User.findOne({ email });
 
-        if (exisatingUser) {
+        if (existingUser) {
             throw new BadRequestError('Email in use');
         }
 
