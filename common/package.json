@@ -1,6 +1,6 @@
 {
     "name": "@mydimitickets/common",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "description": "",
     "main": "./build/index.js",
     "types": "./build/index.d.ts",
@@ -25,7 +25,7 @@
         "@types/jsonwebtoken": "^9.0.2",
         "cookie-session": "^2.0.0",
         "express": "^4.18.2",
-        "express-validator": "^7.0.1",
+        "express-validator": "^6.14.2",
         "jsonwebtoken": "^9.0.0",
         "node-nats-streaming": "^0.3.2"
     }
