@@ -8,7 +8,31 @@ build:
   local:
     push: false
   artefacts:
-    - image: cygnotops/auth
+    - image: martindimitrov/auth
+      context: auth
+      docker:
+        dockerFile: Dockerfile
+      sync:
+        manual: 
+          - src: "src/**/*.ts"
+          dest: .
+    - image: martindimitrov/ticketing-client
+      context: auth
+      docker:
+        dockerFile: Dockerfile
+      sync:
+        manual: 
+          - src: "src/**/*.ts"
+          dest: .
+    - image: martindimitrov/tickets
+      context: auth
+      docker:
+        dockerFile: Dockerfile
+      sync:
+        manual: 
+          - src: "src/**/*.ts"
+          dest: .
+    - image: martindimitrov/orders
       context: auth
       docker:
         dockerFile: Dockerfile

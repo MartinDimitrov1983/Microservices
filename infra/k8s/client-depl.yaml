@@ -14,7 +14,7 @@ spec:
       spec:
         container:
           - name: client
-            image: rallycoding/ticketing-client
+            image: martindimitrov/ticketing-client
 ---
 apiVersion: v1
 kind: Service
