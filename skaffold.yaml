@@ -17,7 +17,7 @@ build:
           - src: "src/**/*.ts"
           dest: .
     - image: martindimitrov/ticketing-client
-      context: auth
+      context: client
       docker:
         dockerFile: Dockerfile
       sync:
@@ -25,7 +25,7 @@ build:
           - src: "src/**/*.ts"
           dest: .
     - image: martindimitrov/tickets
-      context: auth
+      context: tickets
       docker:
         dockerFile: Dockerfile
       sync:
@@ -33,7 +33,15 @@ build:
           - src: "src/**/*.ts"
           dest: .
     - image: martindimitrov/orders
-      context: auth
+      context: orders
+      docker:
+        dockerFile: Dockerfile
+      sync:
+        manual: 
+          - src: "src/**/*.ts"
+          dest: .
+    - image: martindimitrov/expiration
+      context: expiration
       docker:
         dockerFile: Dockerfile
       sync:
